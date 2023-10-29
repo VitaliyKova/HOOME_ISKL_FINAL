@@ -39,10 +39,13 @@ public class Parser {
             return arr;
         } catch (SizeMaxException e) {
             System.out.println("Введено больше данных чем требуется!");
+            e.printStackTrace();
         }catch (NullPointerException e){
             System.out.println("Вы не ввели данные!");
+            e.printStackTrace();
         }catch (SizeMinException e){
             System.out.println("Вы ввели меньше данных, чем требуется!");
+            e.printStackTrace();
         }return null;
     }
     //endregion
@@ -62,7 +65,7 @@ public class Parser {
                     data.setFio(temp);
                 }catch (ParseException e){
                     System.out.println("Дата рождения введена в неверном формате!");
-//                    e.printStackTrace();
+                    e.printStackTrace();
                 }
             }else data.setSex(temp);
         }
